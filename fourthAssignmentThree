@@ -1,0 +1,42 @@
+//without using any header file
+
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter how many elements you want to store : ");
+    scanf("%d", &n);
+
+    int arr[50];
+
+    // taking inputs in array
+    for (int i = 0; i < n; ++i) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Find the largest and smallest numbers with indixes
+    int largest = 0;
+    int smallest = 0;
+    int largestIndex = 0;
+    int smallestIndex = 0;
+
+    for (int i = 0; i < n; ++i) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+            largestIndex = i;
+        }
+        if (arr[i] < smallest) {
+            smallest = arr[i];
+            smallestIndex = i;
+        }
+    }
+
+    // Display the results
+    printf("Largest number: %d\n", largest);
+    printf("Index of largest number: %d\n", largestIndex);
+    printf("Smallest number: %d\n", smallest);
+    printf("Index of smallest number: %d\n", smallestIndex);
+
+    return 0;
+}
